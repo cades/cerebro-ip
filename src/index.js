@@ -10,7 +10,7 @@ const MEMOIZE_OPTIONS = {
 }
 
 const getExternalIp = memoize(() => (
-  fetch('http://icanhazip.com').then(response => response.text())
+  fetch('http://icanhazip.com').then(response => response.text().trim())
 ), MEMOIZE_OPTIONS)
 
 const getLocalIp = memoize(() => {
